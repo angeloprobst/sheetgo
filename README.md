@@ -19,12 +19,12 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # set DROPBOX_ACCESS_TOKEN
-export DROPBOX_ACCESS_TOKEN=73a90acaae2b1ccc0e969709665bc62f  # this is not a valid Dropbox access token
+export DROPBOX_ACCESS_TOKEN=73a90acaae2b1ccc0e969709665bc62f  # this is an invalid Dropbox access token, replace it with an valid one
 
-# runt it
+# run it
 python sheetgo.py
 ```
-Output:
+Expected output:
 ```
  * Serving Flask app "sheetgo" (lazy loading)
  * Environment: production
@@ -33,7 +33,7 @@ Output:
  * Debug mode: off
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
-Keep this terminal open and run a new terminal window to run the tests.
+Keep this terminal open and run a new terminal window to execute the tests.
 
 ### Tests
 
