@@ -33,10 +33,9 @@ Output:
  * Debug mode: off
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
+Keep this terminal open and run a new terminal window to run the tests.
 
 ### Tests
-
-Open a new terminal on the project root path.
 
 #### To run the unit tests:
 
@@ -51,7 +50,9 @@ Entrypoint /excel/info:
 ```bash
 # first, activate the venv
 source venv/bin/activate
-bash tests/entrypoint_excel_info_test.sh tests/sheetgo_tabs_sample.xlsx
+bash tests/entrypoint_excel_info_test.sh  tests/sheetgo_tabs_sample.xlsx
+# where:
+# tests/sheetgo_tabs_sample.xlsx = path to a pre-existing xlsx file
 ```
 
 Entrypoint /image/convert:
@@ -59,7 +60,7 @@ Entrypoint /image/convert:
 source venv/bin/activate
 
 # from jpeg to png
-bash tests/entrypoint_image_convert_test.sh tests/street-lights.jpg png /tmp/sl.png
+bash tests/entrypoint_image_convert_test.sh  tests/street-lights.jpg  png  /tmp/sl.png
 # where:
 # tests/street-lights.jpg = input image
 # png = output format
@@ -74,10 +75,11 @@ Entrypoint /image/convert/fromdropbox:
 ```bash
 source venv/bin/activate
 
-export DROPBOX_ACCESS_TOKEN=73a90acaae2b1ccc0e969709665bc62f  # this is not a valid Dropbox access token
+# set DROPBOX_ACCESS_TOKEN
+export DROPBOX_ACCESS_TOKEN=73a90acaae2b1ccc0e969709665bc62f  # this is an invalid Dropbox access token, replace it with an valid one
 
 # from jpeg to png
-bash tests/entrypoint_image_convert_fromdropbox_test.sh  /Photos/street-lights.jpg  png /tmp/sl.png
+bash tests/entrypoint_image_convert_fromdropbox_test.sh  /Photos/street-lights.jpg  png  /tmp/sl.png
 # where:
 # /Photos/street-lights.jpg = input image path on Dropbox
 # png = output format
