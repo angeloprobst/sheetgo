@@ -25,7 +25,7 @@ usage() {
 [ -z "${INPUT_FILE}" -o -z "${OUTPUT_FORMAT}" -o -z "${OUTPUT_FILE}" ] && usage && exit 1
 
 $CURL -v -s -XPOST "http://127.0.0.1:5000/image/convert?format=${OUTPUT_FORMAT}" \
-    -H "Authorization: $(python generate_jwt.py)" \
+    -H "Authorization: Bearer $(python generate_jwt.py)" \
     -F file=@${INPUT_FILE} \
     --output ${OUTPUT_FILE}
 

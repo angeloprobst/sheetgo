@@ -9,7 +9,7 @@ def generate_jwt(email, jwt_secret_key):
         'email': email,
         'access_token': os.environ.get('DROPBOX_ACCESS_TOKEN', '')
     }
-    return f'Bearer {jwt.encode(payload, jwt_secret_key).decode()}'
+    return jwt.encode(payload, jwt_secret_key).decode()
 
 if __name__ == '__main__':
     jwt_secret_key = 'z6Ct_d2Wy0ZcZZVUYD3beI5ZCSsFrR6-f3ZDyn_MW00'

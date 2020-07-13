@@ -32,7 +32,7 @@ usage() {
 [ -z "${IMAGE_PATH}" -o -z "${OUTPUT_FORMAT}" -o -z "${OUTPUT_FILE}" ] && usage && exit 1
 
 $CURL -v -s -XPOST "http://127.0.0.1:5000/image/convert/fromdropbox?image_path=${IMAGE_PATH}&format=${OUTPUT_FORMAT}" \
-    -H "Authorization: $(python generate_jwt.py)" \
+    -H "Authorization: Bearer $(python generate_jwt.py)" \
     --output ${OUTPUT_FILE}
 
 [ -n "${XDG_OPEN}" -a -e "${OUTPUT_FILE}" ] && ${XDG_OPEN} ${OUTPUT_FILE}

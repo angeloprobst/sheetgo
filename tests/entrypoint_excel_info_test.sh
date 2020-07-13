@@ -22,7 +22,7 @@ usage() {
 [ -z "${INPUT_FILE}" ] && usage && exit 1
 
 $CURL -s -XPOST "http://127.0.0.1:5000/excel/info" \
-    -H "Authorization: $(python generate_jwt.py)" \
+    -H "Authorization: Bearer $(python generate_jwt.py)" \
     -F file=@${INPUT_FILE}
 
 exit 0
