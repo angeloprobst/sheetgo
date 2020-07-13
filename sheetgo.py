@@ -11,6 +11,9 @@ from PIL import Image
 
 app = Flask(__name__)
 
+# TODO: add logging
+# TODO: put it in a docker image with nginx and HTTPS certificates
+
 
 def check_auth_token(headers):
     auth_token = headers.get('Authorization', '') or \
